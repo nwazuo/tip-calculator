@@ -20,23 +20,25 @@
     <div class="inputs">
       <div>
         <label for="bill-amount" class="label">Bill</label>
-        <input type="number" name="bill-amount" class="bill-amount amount-input" placeholder="0"/>
+        <input type="number" value="124" name="bill-amount" class="bill-amount amount-input" placeholder="0"/>
       </div>
       <div>
         <p class="label">Select Tip %</p>
         <div class="tips">
-          <button>5%</button>
+          <button class="button-active">05%</button>
           <button>10%</button>
           <button>15%</button>
           <button>25%</button>
           <button>50%</button>
-          <input type="number" name="custom-tip" placeholder="Custom"/>
+          <input type="number" name="custom-tip" placeholder="Custom" class="custom"/>
         </div>
       </div>
 
       <div>
-        <label class="label">Number of People</label>
-        <input type="number" placeholder="0" class="no-of-people amount-input"/>
+        <label class="label">Number of People <span class="people-error hidden">Can't be zero</span></label>
+        
+        <input type="number" placeholder="0" value="1" class="no-of-people amount-input"/>
+
       </div>
     </div>
     <div class="result">
@@ -54,7 +56,7 @@
           <p>Total</p></p>
           <span>/ person</span>
         </div>
-        <div class="result-item total-amount">
+        <div class="result-item-amount total-amount">
           $0.00
         </div>
       </div>

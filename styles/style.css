@@ -201,3 +201,23 @@ button.reset:active {
   text-align: center;
   padding: 20px 0;
 }
+
+/* state class */
+.button-active {
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%)
+}
+
+.input-error:focus {
+  border-color: red !important;
+}
+
+.people-error {
+  color: red;
+  font-size: 14px;
+  float: right;
+}
+
+.hidden {
+  display: none;
+}
