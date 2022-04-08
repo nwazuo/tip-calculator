@@ -105,4 +105,4 @@ customTipInput.addEventListener("input", (event) => {
 resetBtn.addEventListener("click", (event) => {
   tipAmountPerPersonDisplay.textContent = `$0.00`;
   totalPerPersonDisplay.textContent = `$0.00`;
-})
+});
