@@ -190,6 +190,7 @@ button.reset {
   padding: 10px;
   border: none;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 button.reset:hover,
@@ -220,4 +221,11 @@ button.reset:active {
 
 .hidden {
   display: none;
+}
+
+/* To remove the Number Spinner */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
