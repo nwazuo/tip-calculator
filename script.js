@@ -55,8 +55,6 @@ function calculateResult(billAmount, noOfPeople, tipPercentage) {
     tipAmountPerPerson
   );
 
-  console.log("tip amount per person => ", tipAmountPerPerson);
-  console.log("total per person => ", totalPerPerson);
   displayResult(tipAmountPerPerson, totalPerPerson);
 }
 
@@ -105,4 +103,7 @@ customTipInput.addEventListener("input", (event) => {
 resetBtn.addEventListener("click", (event) => {
   tipAmountPerPersonDisplay.textContent = `$0.00`;
   totalPerPersonDisplay.textContent = `$0.00`;
+  billInput.value = "";
+  peopleInput.value = "";
+  customTipInput.value = "";
 });
