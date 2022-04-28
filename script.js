@@ -12,25 +12,25 @@ function getTotalAmountPerPerson(billAmount, noOfPeople, tipAmountPerPerson) {
 }
 
 // selectors
-const billInput = document.querySelector(".bill-amount");
-const peopleInput = document.querySelector(".no-of-people");
-const tipButtons = document.querySelectorAll(".tips button");
-const customTipInput = document.querySelector(".tips .custom");
-const resetBtn = document.querySelector(".reset");
+const billInput = document.querySelector('.bill-amount');
+const peopleInput = document.querySelector('.no-of-people');
+const tipButtons = document.querySelectorAll('.tips button');
+const customTipInput = document.querySelector('.tips .custom');
+const resetBtn = document.querySelector('.reset');
 
-const tipAmountPerPersonDisplay = document.querySelector(".tip-amount");
-const totalPerPersonDisplay = document.querySelector(".total-amount");
+const tipAmountPerPersonDisplay = document.querySelector('.tip-amount');
+const totalPerPersonDisplay = document.querySelector('.total-amount');
 
 // button click handler
 tipButtons.forEach((tips) => {
-  tips.addEventListener("click", (event) => {
+  tips.addEventListener('click', (event) => {
     // clear the button-active state from all tip buttons
     tipButtons.forEach((node) => {
-      node.classList.remove("button-active");
+      node.classList.remove('button-active');
     });
 
     // add the button-active state to the clicked button
-    event.target.classList.add("button-active");
+    event.target.classList.add('button-active');
     console.log(parseInt(event.target.textContent.substr(0, 2)));
 
     // retrieve the value of button clicked and recalculate the result
@@ -41,7 +41,7 @@ tipButtons.forEach((tips) => {
 
 let billAmount = Number(billInput.value);
 let noOfPeople = Number(peopleInput.value);
-let tipPercentage = 15;
+let tipPercentage = 5;
 
 function calculateResult(billAmount, noOfPeople, tipPercentage) {
   const tipAmountPerPerson = getTipAmountPerPerson(
@@ -67,7 +67,7 @@ function displayResult(tipPerPerson, totalPerPerson) {
   totalPerPersonDisplay.textContent = totalPerPersonText;
 }
 
-billInput.addEventListener("input", (event) => {
+billInput.addEventListener('input', (event) => {
   // change associated value to the new input
   billAmount = Number(event.target.value);
   // call the function that calculates and displays our result
@@ -75,24 +75,24 @@ billInput.addEventListener("input", (event) => {
 });
 
 //Number of People
-peopleInput.addEventListener("input", (event) => {
+peopleInput.addEventListener('input', (event) => {
   noOfPeople = Number(event.target.value);
 
-  let peopleError = document.querySelector(".people-error");
+  let peopleError = document.querySelector('.people-error');
 
   if (noOfPeople == 0) {
-    event.target.classList.add("input-error");
-    peopleError.classList.remove("hidden");
+    event.target.classList.add('input-error');
+    peopleError.classList.remove('hidden');
   } else {
-    event.target.classList.remove("input-error");
-    peopleError.classList.add("hidden");
+    event.target.classList.remove('input-error');
+    peopleError.classList.add('hidden');
   }
 
   calculateResult(billAmount, noOfPeople, tipPercentage);
 });
 
 //Custom Input
-customTipInput.addEventListener("input", (event) => {
+customTipInput.addEventListener('input', (event) => {
   tipPercentage = Number(event.target.value);
 
   calculateResult(billAmount, noOfPeople, tipPercentage);
@@ -100,15 +100,15 @@ customTipInput.addEventListener("input", (event) => {
 
 // add the reset feature
 
-resetBtn.addEventListener("click", (event) => {
+resetBtn.addEventListener('click', (event) => {
   tipAmountPerPersonDisplay.textContent = `$0.00`;
   totalPerPersonDisplay.textContent = `$0.00`;
-  billInput.value = "";
-  peopleInput.value = "";
-  customTipInput.value = "";
-  
-// remove the active state from tipsButton
+  billInput.value = '';
+  peopleInput.value = '';
+  customTipInput.value = '';
+
+  // remove the active state from tipsButton
   tipButtons.forEach((node) => {
-    node.classList.remove("button-active")
-  })
+    node.classList.remove('button-active');
+  });
 });
