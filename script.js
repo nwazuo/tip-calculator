@@ -106,9 +106,10 @@ resetBtn.addEventListener("click", (event) => {
   billInput.value = "";
   peopleInput.value = "";
   customTipInput.value = "";
+  tipPercentage = 5;
   
 // remove the active state from tipsButton
-  tipButtons.forEach((node) => {
-    node.classList.remove("button-active")
+  tipButtons[0].forEach((node) => {
+    node.classList.add("button-active")
   })
 });
